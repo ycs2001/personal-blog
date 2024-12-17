@@ -1,0 +1,510 @@
+/* Body and General Styling */
+body {
+    background-color: #0d0d30; /* Deep space blue */
+    color: #e6e6e6; /* Soft white text */
+    font-family: "Arial", sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: "Arial", sans-serif;
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* General Headings */
+.about-heading,
+.timeline-heading,
+.projects-section h2,
+.certificates-section h2,
+.languages-section h2,
+.papers-section h2,
+.education-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #9a7df8; /* Neon purple */
+    text-shadow: 0 0 8px rgba(154, 125, 248, 0.6);
+}
+
+.about-heading {
+    margin-top: 40px;
+}
+
+/* Paragraphs and Links */
+.about-paragraph {
+    text-align: center;
+    margin: 10px auto;
+    max-width: 800px;
+    font-size: 1.1rem;
+    color: #e6e6e6;
+}
+
+a {
+    color: #3acfd5;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #f8e71c; /* Bright yellow */
+}
+
+/* CV Section */
+.cv-section {
+    text-align: center;
+    margin: 60px 0;
+}
+
+.cv-download-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #9a7df8; /* Neon purple */
+    color: #e6e6e6; /* Soft white */
+    border-radius: 8px;
+    font-size: 1.2rem;
+    box-shadow: 0 0 15px rgba(154, 125, 248, 0.6); /* Neon glow */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cv-download-button:hover {
+    background: #3acfd5; /* Teal glow */
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(58, 207, 213, 0.7);
+}
+
+/* Education Section */
+.education-section {
+    margin: 50px auto;
+    max-width: 1000px;
+    padding: 40px 20px;
+}
+
+.education-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    background: #0f0f2f;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 0 25px rgba(154, 125, 248, 0.2);
+}
+
+.education-card {
+    background: linear-gradient(to bottom, #1a1a40, #2d2d60);
+    border-radius: 16px;
+    padding: 20px;
+    max-width: 400px;
+    flex: 1 1 300px;
+    min-width: 280px;
+    color: #e6e6e6;
+    box-shadow: 0 0 15px rgba(58, 207, 213, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.education-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(58, 207, 213, 0.5);
+}
+
+.timeline-year {
+    font-size: 1.4rem;
+    color: #f8e71c;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(248, 231, 28, 0.8);
+}
+
+.timeline-degree {
+    font-size: 1.1rem;
+    margin: 5px 0;
+    color: #9a7df8;
+    font-weight: bold;
+}
+
+.timeline-institution {
+    font-weight: normal;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #3acfd5;
+}
+
+.timeline-description {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-top: 10px;
+    color: #e6e6e6;
+}
+
+/* Projects Section */
+.projects-section {
+    margin: 60px auto;
+    max-width: 1000px;
+    padding: 0 20px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-grid-item {
+    background: linear-gradient(to bottom, #1a1a40, #2d2d60);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.project-grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(58, 207, 213, 0.5);
+}
+
+.project-title {
+    font-size: 1.4rem;
+    color: #9a7df8;
+    margin-bottom: 10px;
+    text-shadow: 0 0 8px rgba(154, 125, 248, 0.3);
+}
+
+.project-description {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+/* Certificates Section */
+.certificates-section {
+    margin: 60px auto;
+    max-width: 1000px;
+    padding: 0 20px;
+}
+
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.certificate-item {
+    background: linear-gradient(to bottom, #1a1a40, #2d2d60);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(154, 125, 248, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(154, 125, 248, 0.4);
+}
+
+.certificate-item h3 {
+    font-size: 1.2rem;
+    color: #9a7df8;
+    margin-bottom: 10px;
+    text-shadow: 0 0 5px rgba(154, 125, 248, 0.3);
+}
+
+/* Languages Section */
+.languages-section {
+    margin: 60px auto;
+    max-width: 600px;
+    padding: 0 20px;
+}
+
+.languages-list {
+    padding: 0;
+    list-style: none;
+}
+
+.language-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: #1a1a40;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    color: #e6e6e6;
+}
+
+.language-item:hover {
+    background: #2d2d60;
+    box-shadow: 0 0 15px rgba(58, 207, 213, 0.3);
+}
+
+.language-name {
+    font-weight: bold;
+    color: #9a7df8;
+}
+
+.language-level {
+    color: #f8e71c;
+}
+
+/* Timeline Section (My Journey) */
+.timeline {
+    margin: 60px auto;
+    max-width: 800px;
+    position: relative;
+    padding: 0 20px;
+}
+
+.timeline-items {
+    position: relative;
+    margin: 20px 0;
+    padding: 0;
+    list-style: none;
+}
+
+.timeline-items::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, #3acfd5, #9a7df8);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    margin: 20px 0;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.timeline-item:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.timeline-content {
+    position: relative;
+    padding: 20px;
+    background: linear-gradient(to bottom, #1a1a40, #2d2d60);
+    color: #e6e6e6;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(154, 125, 248, 0.1);
+    max-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(58, 207, 213, 0.4);
+}
+
+.timeline-content h3 {
+    font-size: 1.3rem;
+    color: #9a7df8;
+    margin-bottom: 5px;
+    text-shadow: 0 0 5px rgba(154, 125, 248, 0.3);
+}
+
+.timeline-content h4 {
+    font-size: 1.1rem;
+    margin: 5px 0;
+    color: #f8e71c;
+}
+
+.timeline-content p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-top: 10px;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: #9a7df8;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 8px rgba(154, 125, 248, 0.6);
+}
+
+.timeline-item:nth-child(odd)::before {
+    left: calc(50% + 300px);
+}
+
+.timeline-item:nth-child(even)::before {
+    left: calc(50% - 300px);
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-left: 20px;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    margin-right: 20px;
+}
+
+/* Papers Section */
+.papers-section {
+    margin: 60px auto;
+    max-width: 1000px;
+    padding: 0 20px;
+}
+
+.papers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.paper-item {
+    background: linear-gradient(to bottom, #1a1a40, #2d2d60);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.paper-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(154, 125, 248, 0.3);
+}
+
+.paper-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #9a7df8;
+    text-shadow: 0 0 5px rgba(154, 125, 248, 0.3);
+}
+
+.paper-item p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+/* Particle Container */
+.particle-container {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    position: relative;
+}
+
+.timeline-item:nth-child(odd)::before {
+    left: calc(50% + 150px); /* Reduced from 300px to 150px */
+}
+
+.timeline-item:nth-child(even)::before {
+    left: calc(50% - 150px); /* Reduced from 300px to 150px */
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-left: 20px; /* Adjust as needed */
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    margin-right: 20px; /* Adjust as needed */
+}
+
+/* Responsive Adjustments */
+
+/* Example breakpoint at 768px */
+@media (max-width: 768px) {
+    .timeline-item:nth-child(odd)::before,
+    .timeline-item:nth-child(even)::before {
+        left: 50%; /* Center the timeline items */
+        transform: translateX(-50%);
+    }
+
+    .timeline-item {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+    }
+
+    .timeline-content {
+        margin: 20px 0; /* Adjust margins for vertical layout */
+    }
+    /* Adjust headings to be slightly smaller on tablets */
+    h1, h2, h3, h4 {
+        font-size: 90%;
+    }
+
+    /* Reduce padding in large containers */
+    .education-section, .projects-section, .certificates-section,
+    .languages-section, .timeline, .papers-section {
+        padding: 20px 10px;
+    }
+
+    .education-container {
+        flex-direction: column; /* Stack education cards vertically */
+        align-items: center;
+    }
+
+    /* Ensure project cards stack nicely */
+    .projects-grid {
+        grid-template-columns: 1fr; /* Single column on tablets and smaller */
+    }
+
+    /* Timeline items - can reduce margin or font size for smaller screens */
+    .timeline-content {
+        max-width: 90%; /* Let them stretch more on smaller screens */
+    }
+}
+
+/* Example breakpoint at 480px (typical mobile width) */
+@media (max-width: 480px) {
+
+    /* Further adjustments for mobile */
+    .timeline-content {
+        max-width: 90%;
+    }
+
+    .timeline-item::before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    /* Make headings smaller for mobiles */
+    .about-heading,
+    .education-section h2,
+    .projects-section h2,
+    .certificates-section h2,
+    .languages-section h2,
+    .papers-section h2,
+    .timeline-heading {
+        font-size: 1.5rem;
+    }
+
+    .about-paragraph {
+        font-size: 1rem;
+        margin: 10px;
+    }
+
+    /* Cards and containers take full width on small devices */
+    .education-container, .projects-grid, .certificates-grid, .papers-grid {
+        padding: 20px 10px;
+    }
+
+    .education-card,
+    .project-grid-item,
+    .certificate-item,
+    .paper-item {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    /* Language list items become larger tap targets */
+    .language-item {
+        font-size: 0.9rem;
+        padding: 8px 10px;
+    }
+}

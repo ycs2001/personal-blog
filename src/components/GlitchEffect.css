@@ -1,0 +1,37 @@
+.glitch-text {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    position: relative;
+    display: inline-block;
+    animation: glitch 1s infinite;
+}
+.glitch-text span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.75;
+    animation: glitch 1s infinite;
+}
+.glitch-text span:nth-child(1) {
+    left: 2px;
+    text-shadow: -2px 0 red;
+}
+.glitch-text span:nth-child(2) {
+    left: -2px;
+    text-shadow: -2px 0 blue;
+}
+@keyframes glitch {
+    0% {
+        clip-path: inset(0 0 10% 0);
+    }
+    33% {
+        clip-path: inset(10% 0 0 0);
+    }
+    66% {
+        clip-path: inset(0 10% 10% 0);
+    }
+    100% {
+        clip-path: inset(10% 0 0 10%);
+    }
+}

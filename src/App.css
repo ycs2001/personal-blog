@@ -1,0 +1,58 @@
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif,"Segoe UI Emoji", "Noto Color Emoji";
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #ffffff;
+}
+
+h1, h2 {
+  color: #dadee3;
+}
+a {
+  text-decoration: none; /* Removes the underline */
+
+}
+
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  z-index: 11000;
+  flex: 1;
+  display:block;
+  justify-content: center; /* Center content horizontally */
+  align-items: flex-start; /* Align content to the top */
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: transparent; /* Fully transparent */
+  width: 100%;
+  margin: 0 auto; /* Center the content horizontally */
+  min-height: 500px; /* Set a consistent minimum height */
+}
+
+a:hover {
+  color: #007bff; /* Optionally add a hover effect */
+  text-decoration: none; /* Optional: Add an underline on hover for clarity */
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  main {
+    padding: 15px;
+  }
+}

@@ -1,0 +1,258 @@
+/* Header.css */
+
+/* Import Orbitron font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+/* CSS Variables for Consistent Styling */
+:root {
+    --primary-color: #00ffcc;
+    --secondary-color: #ff0099;
+    --background-color: rgba(0, 0, 0, 0.8);
+    --overlay-color: rgba(0, 0, 0, 0.5);
+    --text-color: #ffffff;
+    --transition-duration: 0.3s;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --blur-effect: blur(10px);
+    --z-index-header: 1000;
+    --z-index-overlay: 1100;
+    --z-index-mobile-nav: 1600;
+    --z-index-mobile-menu-icon: 1700;
+}
+
+/* Reset default margins, paddings, and box-sizing */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header Styles */
+header {
+    /*position: sticky;*/
+    color: var(--primary-color);
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping for elements */
+    padding: 15px 20px;
+    background: transparent; /* Semi-transparent for sci-fi effect */
+    z-index: 10000; /* Ensure the header stays above other elements */
+    box-shadow: var(--box-shadow);
+    overflow-x: hidden;
+    overflow-y: auto; /* Enable scrolling for long menus */
+    transition: padding var(--transition-duration) ease;
+}
+
+/* Title Container Styles */
+.logo-container {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    max-width: 60%;
+}
+
+/* Header Title (Nebula M78) */
+header h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 24px;
+    margin: 0;
+    color: var(--primary-color);
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+            0 0 5px var(--primary-color),
+            0 0 10px var(--primary-color),
+            0 0 20px var(--secondary-color);
+    transition: transform var(--transition-duration) ease;
+}
+
+/* Decorative Lines Above and Below the Title */
+header h1::before,
+header h1::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    left: 0;
+    transition: all var(--transition-duration) ease;
+}
+
+header h1::before {
+    top: -8px;
+    transform: rotate(2deg);
+}
+
+header h1::after {
+    bottom: -8px;
+    transform: rotate(-2deg);
+}
+
+header h1:hover::before {
+    top: -10px;
+    transform: rotate(5deg);
+}
+
+header h1:hover::after {
+    bottom: -10px;
+    transform: rotate(-5deg);
+}
+
+/* Navigation Styles */
+nav {
+    flex: 1;
+    max-width: 40%;
+}
+
+nav.desktop-nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap */
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 1;
+}
+
+nav.desktop-nav ul li a {
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color var(--transition-duration) ease, text-shadow var(--transition-duration) ease;
+    padding: 5px 0;
+}
+
+/* Hover Effects on Links */
+nav.desktop-nav ul li a:hover {
+    color: var(--text-color);
+    text-shadow:
+            0 0 10px var(--primary-color),
+            0 0 20px var(--primary-color),
+            0 0 30px var(--primary-color);
+}
+
+/* Mobile Menu Icon */
+.mobile-menu-icon {
+    display: none; /* Hidden by default, shown on mobile via media queries */
+    font-size: 24px;
+    color: var(--text-color);
+    cursor: pointer;
+    z-index: var(--z-index-mobile-menu-icon); /* Above the overlay and nav */
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+}
+
+/* Overlay when mobile menu is open */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--overlay-color);
+    z-index: var(--z-index-overlay); /* Below nav and mobile-menu-icon */
+    opacity: 0;
+    transition: opacity var(--transition-duration) ease;
+    pointer-events: none; /* Prevent interaction when hidden */
+}
+
+.overlay.open {
+    opacity: 1;
+    pointer-events: auto; /* Allow interaction */
+}
+
+/* Mobile Navigation Styles */
+nav.mobile-active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full viewport height */
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-100%);
+    transition: transform var(--transition-duration) ease-in-out, opacity var(--transition-duration) ease-in-out;
+    opacity: 0;
+    z-index: 10000;
+    pointer-events: none;
+    overflow-y: visible;
+}
+
+nav.mobile-active.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+nav.mobile-active ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+    width: 100%; /* Ensure links span the full width */
+    align-items: center;
+}
+
+nav.mobile-active ul li a {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+/* Responsive Design */
+
+/* Tablet and below (max-width: 768px) */
+@media (max-width: 768px) {
+    header {
+        height: 40vh;
+        padding: 10px;
+    }
+
+    .logo-container {
+        position: relative; /* Fixes the element relative to the viewport */
+        top: -10vh; /* Positions the element at the top */
+        left: 0; /* Aligns it to the left edge */
+        width: 100%; /* Make logo span full width */
+        text-align: center;
+        margin-bottom: 10px; /* Space between logo and nav */
+    }
+
+    .desktop-nav {
+        display: none; /* Hide desktop nav */
+    }
+
+    .mobile-menu-icon {
+        display: block; /* Show mobile icon */
+    }
+}
+
+/* Mobile and below (max-width: 480px) */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 20px;
+    }
+
+    nav.mobile-active ul li a {
+        font-size: 20px;
+    }
+}

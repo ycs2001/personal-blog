@@ -1,0 +1,170 @@
+/* Universe-style page container */
+.add-essay-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background: linear-gradient(145deg, #0d0d30, #1a1a40);
+    border-radius: 15px;
+    box-shadow:
+            0 0 10px rgba(58, 207, 213, 0.5),
+            0 0 20px rgba(154, 125, 248, 0.4);
+    font-family: 'Orbitron', sans-serif; /* Sci-fi font */
+    color: #e6e6e6;
+    text-shadow: 0 0 8px rgba(230, 230, 230, 0.6);
+    overflow: hidden;
+}
+
+/* Form Styling */
+.add-essay-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 20px;
+    background: rgba(15, 15, 50, 0.8); /* Dark frosted glass */
+    border-radius: 10px;
+    box-shadow:
+            0 0 10px rgba(58, 207, 213, 0.3),
+            inset 0 0 10px rgba(154, 125, 248, 0.2);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.add-essay-form:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(58, 207, 213, 0.7);
+}
+
+/* Form Group */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #9a7df8;
+    text-shadow: 0 0 5px rgba(154, 125, 248, 0.5);
+}
+
+/* Input Styling */
+.form-control {
+    width: 100%;
+    padding: 12px;
+    background: #1a1a40;
+    color: #e6e6e6;
+    border: 1px solid rgba(58, 207, 213, 0.4);
+    border-radius: 8px;
+    font-size: 16px;
+    box-shadow:
+            0 0 10px rgba(58, 207, 213, 0.2),
+            inset 0 0 5px rgba(58, 207, 213, 0.3);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #3acfd5;
+    box-shadow: 0 0 10px #3acfd5;
+    outline: none;
+}
+
+/* Markdown Editor Styling */
+.easyMDEContainer {
+    border: 1px solid rgba(58, 207, 213, 0.4) !important;
+    border-radius: 8px;
+    background: #0d0d30;
+    color: #e6e6e6;
+    box-shadow:
+            0 0 10px rgba(58, 207, 213, 0.3),
+            inset 0 0 5px rgba(58, 207, 213, 0.2);
+}
+/* Style the SimpleMDE toolbar */
+.easyMDEContainer .editor-toolbar {
+    background: #1a1a40; /* Dark background for toolbar */
+    border: 1px solid #3acfd5; /* Add a glowing border */
+    box-shadow: 0 0 10px rgba(58, 207, 213, 0.5); /* Soft glow */
+}
+
+/* Style toolbar icons */
+ .editor-toolbar button {
+    color: #e6e6e6; /* Light color for icons */
+    background: transparent;
+    border-radius: 4px;
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover state for icons */
+.editor-toolbar button:hover {
+    background: white; /* Bright background */
+    color: #1a1a40; /* Darker icon color */
+    box-shadow: 0 0 10px rgba(58, 207, 213, 0.8); /* Glow effect */
+}
+
+/* Active button state */
+.editor-toolbar button.active {
+    background: #9a7df8; /* Highlighted background for active tools */
+    color: #1a1a40;
+    box-shadow: 0 0 10px rgba(154, 125, 248, 0.8);
+}
+
+/* Tooltip style for better visibility */
+ .editor-toolbar a[data-tooltip]:after {
+    background: #3acfd5; /* Bright background for tooltip */
+    color: #1a1a40; /* Dark text color */
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+.CodeMirror {
+    background: #0f0f2f !important;
+    color: #e6e6e6;
+    font-family: 'Monaco', 'Courier New', monospace;
+    border-radius: 8px;
+}
+
+.CodeMirror-cursor {
+    border-left: 2px solid #3acfd5 !important;
+}
+
+/* Submit Button */
+.btn-submit {
+    padding: 12px 20px;
+    background: linear-gradient(90deg, #3acfd5, #9a7df8);
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(58, 207, 213, 0.6);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.btn-submit:hover {
+    background: linear-gradient(90deg, #9a7df8, #3acfd5);
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(154, 125, 248, 0.7);
+}
+
+.btn-submit:active {
+    transform: scale(0.98);
+}
+
+/* Page Title */
+.add-essay-title {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #9a7df8;
+    text-shadow:
+            0 0 10px rgba(154, 125, 248, 0.7),
+            0 0 20px rgba(58, 207, 213, 0.6);
+    margin-bottom: 30px;
+}
