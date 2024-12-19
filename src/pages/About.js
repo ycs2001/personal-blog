@@ -244,7 +244,7 @@ const About = () => {
             <section className="cv-section">
                 <h2 className="section-heading">Download My CV</h2>
                 <a
-                    href="/path-to-cv.pdf"
+                    href="/csy.pdf"
                     download="Chongshen_Yang_CV.pdf"
                     className="cv-download-button"
                     aria-label="Download CV"

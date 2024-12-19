@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -41,3 +41,9 @@
     -->
   </body>
 </html>
+<script>
+  const redirect = window.location.pathname.substring(
+          window.location.pathname.lastIndexOf('/') + 1
+  );
+  if (redirect) window.location.href = '/' + redirect;
+</script>
