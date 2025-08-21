@@ -42,6 +42,7 @@ app.post('/api/posts', (req, res) => {
     blogPosts.push(newPost);
 
     console.log('New post added:', newPost); // Log for debugging
+    res.setHeader('Content-Type', 'application/json; charset=utf-8');
     res.status(201).json(newPost);
 });
 
