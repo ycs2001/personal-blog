@@ -1,5 +1,7 @@
 const express = require('express');
 const cors = require('cors');
+const fs = require('fs');
+const path = require('path');
 
 const app = express();
 
@@ -13,11 +15,33 @@ app.use(
     })
 );
 
-// In-memory blog posts
-const blogPosts = [
-    { id: 1, title: 'Welcome to my blog', content: 'This is my first blog post. 😊' },
-    { id: 2, title: 'React Tips', content: 'Tips for building apps with React. 🚀' }
-];
+// File for storing blog posts
+const DATA_FILE = path.join(__dirname, 'data', 'posts.json');
+
+// Load posts from file, fallback to empty array
+const loadPosts = () => {
+    try {
+        const data = fs.readFileSync(DATA_FILE, 'utf8');
+        return JSON.parse(data);
+    } catch (err) {
+        console.error('Error loading posts:', err.message);
+        return [];
+    }
+};
+
+// Persistent blog posts
+let blogPosts = loadPosts();
+
+// Save posts to file
+const savePosts = () => {
+    // Ensure the data directory exists
+    fs.mkdirSync(path.dirname(DATA_FILE), { recursive: true });
+    fs.writeFile(DATA_FILE, JSON.stringify(blogPosts, null, 2), 'utf8', (err) => {
+        if (err) {
+            console.error('Error saving posts:', err.message);
+        }
+    });
+};
 
 app.get('/api/posts', (req, res) => {
     console.log('Server-side blog posts:', JSON.stringify(blogPosts, null, 2)); // Log for debugging
@@ -40,6 +64,7 @@ app.post('/api/posts', (req, res) => {
 
     const newPost = { id: blogPosts.length + 1, title, content };
     blogPosts.push(newPost);
+    savePosts();
 
     console.log('New post added:', newPost); // Log for debugging
     res.setHeader('Content-Type', 'application/json; charset=utf-8');
