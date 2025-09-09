@@ -106,7 +106,7 @@ const Header = () => {
             {/* Desktop Navigation */}
             <nav className="nav desktop-nav" aria-label="Main Navigation">
                 <ul className="nav__list">
-                    <li className="nav__item"><Link to="/">Home</Link></li>
+                    <li className="nav__item"><Link to="/home">Home</Link></li>
                     <li className="nav__item"><Link to="/about">About</Link></li>
                     <li className="nav__item"><Link to="/blog">Blog</Link></li>
                     <li className="nav__item"><Link to="/add-essay">Add Essay</Link></li>
@@ -135,7 +135,7 @@ const Header = () => {
                 ref={mobileNavRef}
             >
                 <ul className="nav__list">
-                    <li className="nav__item"><Link to="/" onClick={closeMobileMenu}>Home</Link></li>
+                    <li className="nav__item"><Link to="/home" onClick={closeMobileMenu}>Home</Link></li>
                     <li className="nav__item"><Link to="/about" onClick={closeMobileMenu}>About</Link></li>
                     <li className="nav__item"><Link to="/blog" onClick={closeMobileMenu}>Blog</Link></li>
                     <li className="nav__item"><Link to="/add-essay" onClick={closeMobileMenu}>Add Essay</Link></li>
