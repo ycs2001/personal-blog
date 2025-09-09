@@ -2,6 +2,22 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Environment Variables
+
+The application uses a `.env` file to configure runtime values.
+
+```
+REACT_APP_API_URL=http://localhost:5001/api
+PORT=5001
+CLIENT_URL=http://localhost:3000
+```
+
+- `REACT_APP_API_URL` sets the base URL for API requests in the React app.
+- `PORT` specifies the port for the Express server.
+- `CLIENT_URL` defines the origin allowed by the server's CORS configuration.
+
+Set these values as needed before running or deploying the app.
+
 ## Available Scripts
 
 In the project directory, you can run:
