@@ -7,13 +7,21 @@ import './AddEssay.css';
 const AddEssay = () => {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
+    const [successMessage, setSuccessMessage] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await addPost(title, content); // Submit the title and markdown content
-        setTitle('');
-        setContent('');
-        alert('Essay added successfully!');
+        setSuccessMessage('');
+        setErrorMessage('');
+        try {
+            await addPost(title, content); // Submit the title and markdown content
+            setTitle('');
+            setContent('');
+            setSuccessMessage('Essay added successfully!');
+        } catch (error) {
+            setErrorMessage('Failed to add essay. Please try again.');
+        }
     };
 
     return (
@@ -47,6 +55,8 @@ const AddEssay = () => {
                 <button type="submit" className="btn-submit">
                     Submit
                 </button>
+                {successMessage && <p className="success-message">{successMessage}</p>}
+                {errorMessage && <p className="error-message">{errorMessage}</p>}
             </form>
         </div>
 

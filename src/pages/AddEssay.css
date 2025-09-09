@@ -168,3 +168,15 @@ label {
             0 0 20px rgba(58, 207, 213, 0.6);
     margin-bottom: 30px;
 }
+
+.success-message {
+    color: #3acfd5;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.error-message {
+    color: #ff4d4d;
+    margin-top: 10px;
+    text-align: center;
+}
