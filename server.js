@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
+require('dotenv').config();
 
 const app = express();
 
@@ -9,7 +10,7 @@ app.use(express.json());
 
 app.use(
     cors({
-        origin: 'http://localhost:3000',
+        origin: process.env.CLIENT_URL || 'http://localhost:3000',
         methods: ['GET', 'POST'],
         credentials: true,
     })
@@ -80,7 +81,7 @@ app.use((err, req, res, next) => {
     res.status(500).json({ error: 'Something went wrong. Please try again later.' });
 });
 
-const PORT = 5001;
+const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
