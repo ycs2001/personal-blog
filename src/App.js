@@ -8,6 +8,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Starfield from './components/StarField';
 import Life from './pages/Life';
+import Projects from './pages/Projects';
 import './App.css';
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
                         <Route path="/about" element={<About />} />
                         <Route path="/blog" element={<Blog />} />
                         <Route path="/add-essay" element={<AddEssay />} />
+                        <Route path="/projects" element={<Projects />} />
                         <Route path="/life" element={<Life />} />
                         {/* Fallback for undefined routes */}
                         <Route path="*" element={<Navigate to="/about" replace />} />
